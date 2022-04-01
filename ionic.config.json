@@ -1,0 +1,8 @@
+{
+  "name": "uve-integration-test",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "28f23c44"
+}
