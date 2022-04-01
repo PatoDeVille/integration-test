@@ -6,12 +6,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content fullscreen>
+  <div class="container">
+      <ion-button (click)="openModal()">Modal</ion-button>
+  </div>
 
+  <shared-input width="200px" placeholder="Input de shared"></shared-input>
+    <shared-responsive-button icon="fa-face-laugh-beam" text="Responsive" type="raised"></shared-responsive-button>
   <app-explore-container name="Tab 1 page"></app-explore-container>
 </ion-content>
