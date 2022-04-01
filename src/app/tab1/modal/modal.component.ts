@@ -15,6 +15,6 @@ export class ModalComponent implements OnInit {
   ngOnInit() {}
 
   ex(str: string) {
-    console.debug(this.ts.translate(str));
+    console.debug(this.ts.getAvailableLangs());
   }
 }
