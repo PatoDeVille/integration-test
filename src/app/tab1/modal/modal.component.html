@@ -8,7 +8,10 @@
     <p>title: {{title}}</p>
     <p>content: {{content}}</p>
 
-    <shared-input width="200px" placeholder="Input de shared"></shared-input>
-    <shared-responsive-button icon="fa-face-laugh-beam" [text]="'Responsive'" type="raised"></shared-responsive-button>
+
+    <shared-input icon="fa-magnifying-glass" borderRadius="12px" width="200px" placeholder="Input de shared"></shared-input>
+
+    <shared-responsive-button  icon="fa-face-laugh-beam" [text]="'COMMON.TOPBAR.USERMENU.MYPROFILE'" type="raised" (click)="ex('COMMON.TOPBAR.USERMENU.MYPROFILE')"></shared-responsive-button>
+    <p style="color: black">{{'COMMON.TOPBAR.USERMENU.MYPROFILE' | transloco}}</p>
 
 </div>

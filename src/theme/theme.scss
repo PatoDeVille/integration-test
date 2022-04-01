@@ -1,0 +1,83 @@
+@use "themes" as themes;
+@use '@angular/material' as mat;
+
+// Fonts
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined'; //TODO remove and use fontawesome instead
+//@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500&display=swap'); //TODO after checking the new font works
+
+.material-icons-outlined {
+  font-family: 'Material Icons Outlined';
+  color: #46c1f0;
+}
+.material-icons {
+  font-family: 'Material Icons';
+}
+
+// Primary color
+body {
+  --primary-color: #46c1f0;
+  --primary-lighter-color: #c8ecfb;
+  --primary-darker-color: #2fabe9;
+  --text-primary-color: #{themes.$dark-primary-text};
+  --text-primary-lighter-color: #{themes.$dark-primary-text};
+  --text-primary-darker-color: #{themes.$dark-primary-text};
+}
+
+// Accent color
+body {
+  --accent-color: #f9bc4d;
+  --accent-lighter-color: #fdebca;
+  --accent-darker-color: #f6a534;
+  --text-accent-color: #{themes.$dark-primary-text};
+  --text-accent-lighter-color: #{themes.$dark-primary-text};
+  --text-accent-darker-color: #{themes.$dark-primary-text};
+}
+
+// Warn color
+body {
+  --warn-color: #e74c3c;
+  --warn-lighter-color: #f8c9c5;
+  --warn-darker-color: #dd3327;
+  --text-warn-color: #{themes.$light-primary-text};
+  --text-warn-lighter-color: #{themes.$dark-primary-text};
+  --text-warn-darker-color: #{themes.$light-primary-text};
+}
+
+
+// Theme Init
+.theme {
+  @include mat.all-component-themes(themes.$theme);
+  *::-webkit-scrollbar-thumb{
+    background-color: #{themes.$light-scrollbar-bg}//mat.get-color-from-palette($background-palette, scrollbar);
+  }
+}
+
+.theme-dark {
+  @include mat.all-component-themes(themes.$darkTheme);
+  *::-webkit-scrollbar-thumb{
+    background-color: #{themes.$dark-scrollbar-bg}
+  }
+}
+
+// Specific component overrides, pieces that are not in line with the general theming
+
+// Handle buttons appropriately, with respect to line-height
+.mat-raised-button, .mat-stroked-button, .mat-flat-button {
+  padding: 0 1.15em;
+  margin: 0 .65em;
+  min-width: 3em;
+  line-height: 36.4px
+}
+
+.mat-standard-chip {
+  padding: .5em .85em;
+  min-height: 2.5em;
+}
+
+.material-icons {
+  font-size: 24px;
+  font-family: 'Material Icons', 'Material Icons';
+  .mat-badge-content {
+    font-family: 'Heebo';
+  }
+}

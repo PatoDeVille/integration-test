@@ -31,7 +31,17 @@
                 "output": "./svg"
               }
             ],
-            "styles": ["src/theme/variables.scss", "src/global.scss"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["node_modules/@uve/themes/src/assets/styles"]
+            },
+            "styles": [
+              "src/theme/variables.scss",
+              "src/global.scss",
+              "src/theme/theme.scss",
+              "node_modules/leaflet/dist/leaflet.css",
+              "node_modules/leaflet-draw/dist/leaflet.draw.css",
+              "node_modules/@uve/shared-components/src/lib/index.scss"
+            ],
             "scripts": [],
             "aot": false,
             "vendorChunk": true,
@@ -122,10 +132,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
-            ]
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         },
         "e2e": {
